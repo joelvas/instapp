@@ -1,0 +1,14 @@
+.saved-posts {
+  width: 50%;
+  padding: 1rem;
+}
+.saved-posts__list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+@media (max-width: 500px) {
+  .saved-posts {
+    padding: 1rem 0;
+  }
+}

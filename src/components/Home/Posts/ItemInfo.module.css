@@ -1,0 +1,16 @@
+.item-info {
+  padding: 0 0.7rem;
+  line-height: 1.3rem;
+}
+.item-info__likes {
+  font-size: 0.91rem;
+  font-weight: 500;
+  padding-bottom: 0.3rem;
+}
+.item-info__username {
+  font-size: 0.91rem;
+  font-weight: 500;
+}
+.item-info__description {
+  font-size: 0.91rem;
+}

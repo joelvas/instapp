@@ -1,0 +1,16 @@
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
+  animation: materialize 0.4s ease-in-out;
+}
+
+@keyframes materialize {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

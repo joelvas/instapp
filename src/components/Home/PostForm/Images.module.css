@@ -1,0 +1,13 @@
+.images {
+  border-radius: 7px;
+  display: flex;
+  flex-flow: column;
+}
+.images__new {
+  display: flex;
+  font-size: 0.9rem;
+  padding: 1rem 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--powder-blue7);
+}

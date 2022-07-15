@@ -1,0 +1,4 @@
+.item-comments {
+  display: flex;
+  flex-flow: column;
+}

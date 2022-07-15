@@ -1,0 +1,8 @@
+.authentication {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 1rem 1rem 1rem;
+  background-color: var(--powder-blue0);
+  min-height: calc(100vh - var(--header-height));
+}

@@ -1,0 +1,20 @@
+.profile-button{
+  display: flex;
+  flex-flow: column;
+  position: relative;
+}
+.profile-button__button{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.profile-button__button__text{
+  padding: .5rem 1rem;
+  color: white;
+  font-weight: 500;
+}
+@media (max-width: 600px){
+  .profile-button__button__text{
+    display: none;
+  }
+}

@@ -1,0 +1,11 @@
+.form-button {
+  cursor: pointer;
+  background-color: var(--powder-blue5);
+  color: white;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+}
+.form-button:hover {
+  background-color: var(--powder-blue6);
+}

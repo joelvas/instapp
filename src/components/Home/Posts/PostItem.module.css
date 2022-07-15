@@ -1,0 +1,24 @@
+.post-item {
+  display: flex;
+  flex-flow: column;
+  background-color: white;
+  border-radius: 7px;
+  padding-bottom: 0.5rem;
+  box-shadow: var(--box-shadow2);
+  animation: materialize 0.6s ease-in-out;
+}
+@media (max-width: 500px) {
+  .post-item {
+    border-radius: 0;
+  }
+}
+@keyframes materialize {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

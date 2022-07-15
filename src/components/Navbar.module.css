@@ -1,0 +1,22 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  width: calc(100%);
+  margin: auto;
+  background-color: var(--navbar-bg);
+  transition: padding 0.3s ease-in;
+  height: var(--navbar-height);
+  box-shadow: var(--box-shadow1);
+}
+.navbar-title {
+  flex-grow: 1;
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: var(--navbar-title-color);
+}
+@media (min-width: 600px) {
+  .navbar {
+    padding: 0 15%;
+  }
+}

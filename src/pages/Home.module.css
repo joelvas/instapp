@@ -1,0 +1,21 @@
+.main {
+  display: flex;
+  flex-flow: row;
+  position: relative;
+  justify-content: center;
+  gap: 3rem ;
+  padding: 1rem 2rem;
+  min-height: calc(100vh - var(--header-height));
+  background-color: var(--powder-blue0);
+}
+.main__feed{
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  max-width: 470px;
+}
+@media (max-width: 500px) {
+  .main {
+    padding: 1rem 0;
+  }
+}

@@ -1,0 +1,42 @@
+.register {
+  display: flex;
+  flex-flow: column;
+  gap: 1.5rem;
+  width: 100%;
+  background-color: white;
+  max-width: 25rem;
+  padding: 1.5rem 2.5rem;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow1);
+  animation: materialize 0.4s ease-in-out;
+}
+.register__title {
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+.register__more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.register__more span {
+  font-size: 0.9rem;
+}
+.register__more__link {
+  cursor: pointer;
+  color: var(--powder-blue7);
+  font-weight: 500;
+}
+.register__more__link:hover {
+  text-decoration: underline;
+}
+
+@keyframes materialize {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

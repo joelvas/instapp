@@ -1,0 +1,23 @@
+.comment-entry {
+  display: flex;
+  font-size: 1rem;
+  background-color: var(--powder-blue0);
+  border-radius: 5px;
+  border: 1px solid var(--independence000);
+  margin: 0.5rem 0.7rem;
+}
+.comment-entry__input {
+  flex-grow: 1;
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  width: 100%;
+}
+.comment-entry__button {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: var(--morning-blue6);
+  color: white;
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+}
+.comment-entry__button:hover {
+  background-color: var(--morning-blue5);
+}

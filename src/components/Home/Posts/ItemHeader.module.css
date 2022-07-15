@@ -1,0 +1,35 @@
+.item-header {
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+.item-header__img {
+  cursor: pointer;
+  padding: 10;
+  width: 35px;
+  padding: 0.5rem 0.3rem;
+  box-sizing: content-box;
+}
+.item-header__user {
+  cursor: pointer;
+  padding: 0 0.5rem;
+  font-weight: 500;
+  font-size: 0.91rem;
+}
+.item-header__date {
+  position: relative;
+  top: 0.03rem;
+  font-size: 0.65rem;
+  color: var(--independence);
+  text-transform: uppercase;
+  padding: 0 0.5rem;
+}
+.item-header__options {
+  cursor: pointer;
+  margin-left: auto;
+  padding: 0.4rem 0.5rem;
+  border-radius: 50%;
+}
+.item-header__options:hover {
+  background-color: var(--independence0000);
+}

@@ -1,0 +1,11 @@
+.toast-list {
+  display: flex;
+  z-index: 2;
+  flex-flow: column;
+  gap: 0.5rem;
+  position: fixed;
+  top: 10vh;
+  right: 1rem;
+  width: 90%;
+  max-width: 400px;
+}

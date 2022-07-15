@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* {
+  color: var(--independence6);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  outline: none;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+:root {
+  /* CSS */
+  --navbar-height: 3.5rem;
+  --header-height: calc(var(--navbar-height));
+  --navbar-bg: var(--morning-blue6);
+  --box-shadow1: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  --box-shadow2: 0px 0px 2px rgba(0, 0, 0, 0.35);
+  --navbar-title-color: white;
+
+  --error-color: #e53935;
+  --success-color: #43A047;
+  --warning-color: #FBC02D;
+  --info-color: #1E88E5;
+
+  /* CSS HEX */
+  --white: #fff;
+  --independence0000: #f3f4f6;
+  --independence000: #dcdee4;
+  --independence00: #c5c8d3;
+  --independence0: #aeb3c1;
+  --independence1: #979daf;
+  --independence2: #80879d;
+  --independence3: #6a728a;
+  --independence4: #555b6e;
+  --independence5: #474c5c;
+  --independence6: #353945;
+  --independence7: #23262e;
+  --morning-blue1: #dae7e6;
+  --morning-blue2: #c2d6d5;
+  --morning-blue3: #a9c6c4;
+  --morning-blue4: #89b0ae;
+  --morning-blue5: #78a5a3;
+  --morning-blue6: #629390;
+  --morning-blue7: #527a78;
+  --powder-blue0: #f1f9f7;
+  --powder-blue1: #e2f3ef;
+  --powder-blue2: #bee3db;
+  --powder-blue3: #a9dad0;
+  --powder-blue4: #8dcec0;
+  --powder-blue5: #70c2b0;
+  --powder-blue6: #54b6a0;
+  --powder-blue7: #439d8a;
+  --cultured: #faf9f9;
+  --apricot: #ffd6ba;
+}

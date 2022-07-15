@@ -1,0 +1,26 @@
+.ranking-list {
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-flow: column;
+}
+.ranking-list__item {
+  display: flex;
+  flex-flow: row;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+.ranking-list__item span {
+  color: var(--independence5);
+}
+.ranking-list__item span:first-child {
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+.ranking-list__item span:nth-child(2) {
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.ranking-list__item span:nth-child(2):hover {
+  color: var(--morning-blue6);
+}
