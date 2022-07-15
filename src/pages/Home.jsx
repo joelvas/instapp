@@ -4,6 +4,7 @@ import Posts from '../components/Home/Posts'
 import NewPost from '../components/Home/NewPost'
 import Ranking from '../components/Home/Ranking'
 const Home = () => {
+  document.title = 'Home | Instapp'
   return (
     <>
       <main className={classes.main}>
