@@ -9,7 +9,7 @@ const CommentsList = ({ comments }) => {
   return (
     <>
       <ul className={classes['comments-list']}>
-        {(showAll ? comments : comments?.slice(0, 1)).map((comment) => {
+        {(showAll ? comments : comments?.slice(0, 1))?.map((comment) => {
           return <CommentItem key={comment.id} comment={comment} />
         })}
       </ul>

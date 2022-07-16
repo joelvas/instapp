@@ -34,7 +34,9 @@ const ProfileButton = () => {
         className={classes['profile-button__button']}
         onClick={clickButtonHandler}
       >
-        <span className={classes['profile-button__button__text']}>Joel</span>
+        <span className={classes['profile-button__button__text']}>
+          {user.name}
+        </span>
         <img
           className={classes['profile-button__button__img']}
           src={getAvatar()}

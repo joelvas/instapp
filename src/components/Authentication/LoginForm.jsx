@@ -3,11 +3,10 @@ import classes from './LoginForm.module.css'
 import FormInput from '../UI/FormInput'
 import FormButton from '../UI/FormButton'
 import { useDispatch } from 'react-redux'
-import { login } from '../../store/auth'
-const LoginForm = () => {
+import { showToastWithTimeout } from '../../store/ui'
+const LoginForm = ({ onSendForm }) => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [loading, setLoading] = useState(false)
   const dispatch = useDispatch()
   const usernameChangeHandler = (event) => {
     setUsername(event.target.value)
@@ -17,14 +16,30 @@ const LoginForm = () => {
   }
   const submitHandler = (event) => {
     event.preventDefault()
-    setLoading(true)
-    dispatch(login({ username, password }))
-    setUsername('')
-    setPassword('')
-    setLoading(false)
+    const loginForm = { username, password }
+    const validForm = validateForm(loginForm)
+    if (validForm) {
+      const success = onSendForm(loginForm)
+      if (success) {
+        setUsername('')
+        setPassword('')
+      }
+    }
   }
-  if (loading) {
-    return <div>Loading...</div>
+
+  const validateForm = (loginForm) => {
+    const errors = []
+    if (loginForm.username.length === 0) errors.push('Username is required')
+    if (loginForm.password.length === 0) errors.push('Password is required')
+    errors.forEach((error) => {
+      dispatch(
+        showToastWithTimeout({
+          type: 'Error',
+          message: error
+        })
+      )
+    })
+    return errors.length === 0
   }
   return (
     <form className={classes['login-form']}>
@@ -32,6 +47,7 @@ const LoginForm = () => {
         onChange={usernameChangeHandler}
         type="text"
         value={username}
+        onPressEnter={submitHandler}
         autofocus={true}
         placeholder="Write your username"
       />
@@ -42,7 +58,7 @@ const LoginForm = () => {
         onPressEnter={submitHandler}
         placeholder="Write your password"
       />
-      <FormButton onClick={submitHandler} type="button" value="Signin" />
+      <FormButton onClick={submitHandler} type="button" value="Login" />
     </form>
   )
 }
