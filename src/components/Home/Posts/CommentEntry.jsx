@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import classes from './CommentEntry.module.css'
 import useHttp from '../../../hooks/useHttp'
 import { useDispatch } from 'react-redux'
-import { showToastWithTimeout } from '../../../store/ui'
 import { feedActions } from '../../../store/feed'
 const CommentEntry = ({ postId }) => {
   const [comment, setComment] = useState('')
@@ -14,12 +13,6 @@ const CommentEntry = ({ postId }) => {
   const sendCommentHandler = async () => {
     const handleResponse = (res) => {
       if (res.status === 201) {
-        dispatch(
-          showToastWithTimeout({
-            type: 'Success',
-            message: 'You have commented this post'
-          })
-        )
         dispatch(feedActions.commentPost({ id: postId, comment: res.data }))
         setComment('')
       }

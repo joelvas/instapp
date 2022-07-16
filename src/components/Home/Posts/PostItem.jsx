@@ -9,7 +9,7 @@ const PostItem = ({ post }) => {
   return (
     <li className={classes['post-item']}>
       <ItemHeader date={post.date} user={post.user} />
-      <ItemImages images={post.images} />
+      {post.images?.length > 0 && <ItemImages images={post.images} />}
       <ItemActions post={post} />
       <ItemInfo likes={post.likes} text={post.text} user={post.user} />
       <ItemComments post={post} />

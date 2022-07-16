@@ -7,7 +7,11 @@ const MyPosts = ({ posts }) => {
       {posts?.length === 0 && <span>No posts found.</span>}
       <ul className={classes['my-posts__list']}>
         {posts?.map((post) => {
-          return <PostItem key={post.id} post={post} />
+          return (
+            <div key={post.id}>
+              <PostItem post={post} />
+            </div>
+          )
         })}
       </ul>
     </div>
