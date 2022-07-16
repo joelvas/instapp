@@ -10,8 +10,8 @@ const PostItem = ({ post }) => {
     <li className={classes['post-item']}>
       <ItemHeader date={post.date} user={post.user} />
       {post.images?.length > 0 && <ItemImages images={post.images} />}
-      <ItemActions post={post} />
       <ItemInfo likes={post.likes} text={post.text} user={post.user} />
+      <ItemActions post={post} />
       <ItemComments post={post} />
     </li>
   )

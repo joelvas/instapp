@@ -1,16 +1,16 @@
 .item-info {
-  padding: 0 0.7rem;
+  padding: 0.5rem 0.7rem;
   line-height: 1.3rem;
 }
 .item-info__likes {
   font-size: 0.91rem;
   font-weight: 500;
-  padding-bottom: 0.3rem;
+  padding-top: 0.5rem;
 }
 .item-info__username {
-  font-size: 0.91rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 600;
 }
 .item-info__description {
-  font-size: 0.91rem;
+  font-size: 1rem;
 }
