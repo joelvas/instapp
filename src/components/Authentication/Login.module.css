@@ -7,7 +7,7 @@
   max-width: 25rem;
   padding: 1.5rem 2.5rem;
   border-radius: 5px;
-  box-shadow: var(--box-shadow1);
+  box-shadow: var(--box-shadow2);
   animation: materialize 0.4s ease-in-out;
 }
 .login__title {
