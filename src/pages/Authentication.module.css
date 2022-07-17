@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   padding: 5rem 1rem 1rem 1rem;
+  max-width: 100vw;
   background-color: var(--powder-blue0);
-  min-height: calc(100vh - var(--header-height));
+  min-height: 100vh;
 }

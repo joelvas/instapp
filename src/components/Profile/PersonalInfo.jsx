@@ -1,14 +1,32 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import classes from './PersonalInfo.module.css'
-import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
+import useHttp from '../../hooks/useHttp'
 const PersonalInfo = () => {
-  const user = useSelector((state) => state.auth.user)
-  const followers = useSelector((state) => state.user.followers)
-  const following = useSelector((state) => state.user.following)
-  const myPosts = useSelector((state) => state.user.myPosts)
+  const [profile, setProfile] = useState({
+    username: 'unknown',
+    name: '',
+    posts: 0,
+    bio: '-',
+    followers: 0,
+    following: 0
+  })
   const getAvatar = () => {
-    return 'https://api.multiavatar.com/' + user?.username + '.png'
+    return 'https://api.multiavatar.com/' + profile?.username + '.png'
   }
+  const { username } = useParams()
+  const { sendRequest } = useHttp()
+  useEffect(() => {
+    const handleResponse = (res) => {
+      if (res.status === 200) {
+        setProfile(res.data)
+      }
+    }
+    const requestConfig = {
+      url: `${import.meta.env.VITE_API_URL}/users/${username}`
+    }
+    sendRequest(requestConfig, handleResponse)
+  }, [username])
   return (
     <div className={classes['personal-info']}>
       <div className={classes['personal-info__header']}>
@@ -25,22 +43,23 @@ const PersonalInfo = () => {
             src={getAvatar()}
             alt=""
           />
-          <span>{user?.username}</span>
+          <span>{profile?.username}</span>
+          <button>Follow</button>
           <div>edit</div>
         </div>
         <ul className={classes['personal-info__body__status']}>
           <li>
-            <span>{myPosts.length}</span> posts
+            <span>{profile.posts}</span> posts
           </li>
           <li>
-            <span>{followers?.length}</span> followers
+            <span>{profile.followers}</span> followers
           </li>
           <li>
-            <span>{following?.length}</span> following
+            <span>{profile.following}</span> following
           </li>
         </ul>
         <span className={classes['personal-info__body__bio']}>
-          No description
+          {profile.bio}
         </span>
       </div>
     </div>

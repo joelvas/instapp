@@ -1,15 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import classes from './Shared.module.css'
+import { useParams } from 'react-router-dom'
 import MyPosts from './MyPosts'
 import SavedPosts from './SavedPosts'
-import { useSelector } from 'react-redux'
 const Shared = () => {
   const [sliderPosition, setSliderPosition] = useState(0)
-  const myFavorites = useSelector((state) => state.user.favorites)
-  const myPosts = useSelector((state) => state.user.myPosts)
   const toggleSlider = (index) => {
     setSliderPosition(index)
   }
+  const { username } = useParams()
+  useEffect(() => {
+    setSliderPosition(0)
+  }, [username])
   return (
     <div className={classes.shared}>
       <div className={classes.shared__heading}>
@@ -34,8 +36,8 @@ const Shared = () => {
         className={classes.shared__slider}
         style={{ right: sliderPosition * 100 + '%' }}
       >
-        <MyPosts posts={myPosts} />
-        <SavedPosts posts={myFavorites.map((f) => f.post)} />
+        <MyPosts />
+        <SavedPosts />
       </div>
     </div>
   )

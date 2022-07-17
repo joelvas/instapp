@@ -22,7 +22,7 @@ const Routing = ({ isAuthenticated }) => {
         }
       ></Route>
       <Route
-        path="/profile"
+        path="/profile/:username"
         element={
           <ProtectedRoute isAuthenticated={isAuthenticated}>
             <Profile />

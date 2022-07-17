@@ -28,6 +28,7 @@
 .personal-info__body__username {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
 }
 .personal-info__body__username span {
   padding: 0.5rem 1rem 0.5rem 0.5rem;
@@ -37,6 +38,20 @@
   cursor: pointer;
   padding: 0.3rem 0.5rem;
   color: var(--morning-blue5);
+  margin-left: auto;
+}
+.personal-info__body__username button {
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--morning-blue5);
+  border-radius: 7px;
+  padding: 0.3rem;
+  border: 1px solid var(--morning-blue5);
+}
+.personal-info__body__username button:hover {
+  border-color: var(--morning-blue7);
+  color: var(--morning-blue7);
 }
 .personal-info__body__username div:hover {
   color: var(--morning-blue7);

@@ -46,6 +46,7 @@ const ProfileButton = () => {
       </button>
       <FloatingMenu active={activeMenu}>
         <ProfileOptions
+          user={user}
           onSelectOption={() => {
             setActiveMenu(false)
           }}
