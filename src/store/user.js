@@ -23,10 +23,20 @@ const userSlice = createSlice({
     setMyPosts: (state, action) => {
       state.myPosts = action.payload
     },
-    setFollowers: (state, action) => {},
-    setFollowing: (state, action) => {},
-    addFollowing: (state, action) => {},
-    removeFollowing: (state, action) => {}
+    setFollowers: (state, action) => {
+      state.followers = action.payload
+    },
+    setFollowing: (state, action) => {
+      state.following = action.payload
+    },
+    addFollowing: (state, action) => {
+      state.following.unshift(action.payload)
+    },
+    removeFollowing: (state, action) => {
+      state.following = state.following.filter(
+        (fn) => fn.username !== action.payload
+      )
+    }
   }
 })
 
