@@ -65,7 +65,7 @@ const SocketInit = () => {
     const headers = {
       Authorization: `Bearer ${token}`
     }
-    const Sock = new SockJS('http://127.0.0.1:8082/ws')
+    const Sock = new SockJS(`${import.meta.env.VITE_API_URL}`)
     stompClient = over(Sock)
     stompClient.debug = () => {}
     stompClient.connect(
