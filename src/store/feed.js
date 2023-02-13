@@ -24,7 +24,7 @@ const feedSlice = createSlice({
     unlikePost: (state, action) => {
       state.content = state.content.map((post) => {
         if (post.id === action.payload.id) {
-          post.likes = post.likes.filter((like) => like.user.id !== 4)
+          post.likes = post.likes.filter((like) => like.user.id !== action.payload.userId)
         }
         return post
       })

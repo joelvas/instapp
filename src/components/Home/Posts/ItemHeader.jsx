@@ -1,18 +1,15 @@
 import React from 'react'
 import classes from './ItemHeader.module.css'
 import { useNavigate } from 'react-router-dom'
+import { formatRelative, subDays } from 'date-fns'
 const ItemHeader = ({ date, user }) => {
   const navigate = useNavigate()
   const getAvatar = () => {
     return 'https://api.multiavatar.com/' + user.username + '.png'
   }
   const getDate = (date) => {
-    const dateObj = new Date(date)
-    return (
-      dateObj.toDateString().slice(3, 16) +
-      ' at ' +
-      dateObj.toTimeString().slice(0, 5)
-    )
+    const newDate = new Date(date)
+    return formatRelative(subDays(new Date(), 0), newDate)
   }
   const clickUsernameHandler = () => {
     navigate(`/profile/${user.username}`)

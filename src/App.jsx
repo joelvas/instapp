@@ -6,6 +6,7 @@ import BaseLayout from './layouts/BaseLayout'
 import ToastList from './components/UI/ToastList'
 import Routing from './components/Routing'
 import useAuthChecker from './hooks/useAuthChecker'
+import SocketInit from './sections/SocketInit'
 import useFetchInitials from './hooks/useFetchInitials'
 const App = () => {
   const toasts = useSelector((state) => state.ui.toast.list)
@@ -20,6 +21,7 @@ const App = () => {
 
   return (
     <div className={classes.app}>
+      {isAuthenticated && <SocketInit />}
       <BaseLayout>
         <Routing isAuthenticated={isAuthenticated} />
       </BaseLayout>

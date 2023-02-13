@@ -55,13 +55,6 @@ const PostForm = ({ onFinishedRequest }) => {
     setLoading(true)
     const handleResponse = (res) => {
       if (res.status === 201) {
-        dispatch(feedActions.addPost(res.data))
-        dispatch(
-          showToastWithTimeout({
-            type: 'Success',
-            message: 'You have added a new post'
-          })
-        )
         onFinishedRequest()
       }
     }

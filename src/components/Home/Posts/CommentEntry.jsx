@@ -13,7 +13,6 @@ const CommentEntry = ({ postId }) => {
   const sendCommentHandler = async () => {
     const handleResponse = (res) => {
       if (res.status === 201) {
-        dispatch(feedActions.commentPost({ id: postId, comment: res.data }))
         setComment('')
       }
     }

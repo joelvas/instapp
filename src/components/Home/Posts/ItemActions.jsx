@@ -5,7 +5,6 @@ import CommentIcon from '../../UI/icons/CommentIcon'
 import BookmarkIcon from '../../UI/icons/BookmarkIcon'
 import { useDispatch, useSelector } from 'react-redux/es/exports'
 import { showToastWithTimeout } from '../../../store/ui'
-import { feedActions } from '../../../store/feed'
 import { userActions } from '../../../store/user'
 import useHttp from '../../../hooks/useHttp'
 const ItemActions = ({ post }) => {
@@ -15,17 +14,13 @@ const ItemActions = ({ post }) => {
   const userFavorites = useSelector((state) => state.user.favorites)
   const clickLikeHandler = async () => {
     const handleResponse = (res) => {
-      if (res.status === 201) {
+      if (res.status === 400) {
         dispatch(
           showToastWithTimeout({
-            type: 'Success',
-            message: 'You have liked this post'
+            type: 'Error',
+            message: 'There was an error.'
           })
         )
-        dispatch(feedActions.likePost({ id: post.id, like: res.data }))
-      }
-      if (res.status === 204) {
-        dispatch(feedActions.unlikePost({ id: post.id }))
       }
     }
     const requestConfig = {
@@ -36,23 +31,13 @@ const ItemActions = ({ post }) => {
   }
   const clickFavoriteHandler = async () => {
     const handleResponse = (res) => {
-      if (res.status === 201) {
+      if (res.status === 400) {
         dispatch(
           showToastWithTimeout({
-            type: 'Success',
-            message: 'Saved to your favorites'
+            type: 'Error',
+            message: 'There was an error.'
           })
         )
-        dispatch(userActions.addFavorite(res.data))
-      }
-      if (res.status === 204) {
-        dispatch(
-          showToastWithTimeout({
-            type: 'Success',
-            message: 'Post removed from you favorites'
-          })
-        )
-        dispatch(userActions.removeFavorite(post.id))
       }
     }
     const requestConfig = {
